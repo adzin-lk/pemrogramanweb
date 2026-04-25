@@ -1,99 +1,519 @@
-#search {
-    width: 100%;
-    height: 50em;
-    background-image: url("https://images.unsplash.com/photo-1610809376778-928ee2c3a561?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    margin: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    scroll-behavior: smooth;
 }
 
-.title {
-    color: white;
-    text-align: center;
+/* --- NAVBAR STYLING --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.title h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-.title p {
-    font-size: 1.5em;
-    margin: 0.5em 0;
-}
-
-.title hr {
-    width: 50em;
-    max-width: 90vw;
-    border: 1px solid white;
-    margin: 3em auto;
-    opacity: 0.5;
-}
-
-.form-container {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3em;
-    border-radius: 1em;
-    color: white;
-    gap: 2em;
-}
-
-.form-container select,
-.form-container input {
-    box-sizing: border-box;
-    padding: 0.5em;
-    border: none;
-    border-radius: 0.5em;
-    width: 15em;
-    height: 2.5em;
-}
-
-.form-container button {
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.5em;
-    background-color: #ff5722;
-    color: white;
-    cursor: pointer;
-}
-
-.car-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: 1.5em;
-    align-content: center;
-    padding: 2em 1em;
-    align-items: start;
-    max-width: 80rem;
+.nav-container {
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
 }
 
-.car-list h2 {
-    font-size: 2em;
-    margin: 2em 0;
-    grid-column: 1 / -1;
-    text-align: center;
+.logo {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.car-item {
+.logo span {
+    color: #ff5722;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: #faf9f9;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff5722;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after, 
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Auth Buttons */
+.nav-auth {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login {
+    color: #fff;
+    margin-right: 25px;
+    font-weight: 500;
+}
+
+.btn-register {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #e64a19;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+}
+
+/* --- HERO & SEARCH SECTION --- */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url("https://images.unsplash.com/photo-1610809376778-928ee2c3a561?q=80&w=2340&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: min(22rem, 100%);
 }
 
-.car-item img {
+.title {
+    color: rgb(252, 249, 249);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.title p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.title hr {
+    width: 100px;
+    border: 2px solid #ff5722;
+    margin: 20px auto;
+}
+
+/* Form Container */
+.form-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #fafafa;
+    font-size: 14px;
+    margin-bottom: 8px; 
+    font-weight: 500;
+}
+
+.form-container select, 
+.form-container input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    width: 200px;
+    outline: none;
+}
+
+.btn-search {
+    background-color: #ff5722;
+    color: rgb(255, 254, 254);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #e64a19;
+}
+
+/* --- CAR LIST SECTION --- */
+.car-list {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 60px 5%;
+    text-align: center;
+    background-color: #e7eff4;
+    border-radius: 25px;
+}
+
+.car-list h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #e64a19;
+    font-weight: 800;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.car-item {
+    background-color: #fefcfc;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #0d0909;
+}
+
+.car-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.car-image {
     width: 100%;
-    height: 300px;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f8f7f7;
+}
+.car-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.car-item:hover .car-image img {
+    transform: scale(1.1);
+}
+.car-info {
+    padding:30px 20px;
+}
+.car-item h3 {
+    font-size: 1.6rem;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.price-tag {
+    display: block;
+    color: #ff5722;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.car-info p{
+    color: #777;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn-rent {
+    display: inline-block;
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.btn-rent:hover {
+    background-color: #ffffff;
+    color: #ff5722;
+    border: 2px solid #ff5722;
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3);
+}
+
+
+/*BAGIAN KHUSUS HALAMAN CONTACT */
+.contact-section {
+    padding: 150px 5% 100px; /* Jarak atas agar tidak tertutup navbar */
+    background-color: #f1f3f6; /* Background abu-abu soft */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Kiri 40%, Kanan 60% */
+    gap: 50px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+}
+
+/* Sisi Kiri: Info Kontak */
+.contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #111;
+    font-weight: 800;
+}
+
+.contact-info p {
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.info-item i {
+    background: #ff5722;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.info-item h3 {
+    font-size: 18px;
+    color: #111;
+    margin-bottom: 2px;
+}
+
+.info-item p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* Sisi Kanan: Form Styling (PENTING) */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak antar elemen form */
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Mengatur Kotak Input dan Textarea */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+/* Efek saat input diklik */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #ff5722;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.1);
+}
+
+/* Mengatur Tombol Kirim */
+.btn-send {
+    background-color: #111;
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content; /* Tombol menyesuaikan lebar teks */
+}
+
+.btn-send:hover {
+    background-color: #ff5722;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+}
+
+/* Responsif Mobile agar tampilan tetap bagus di HP */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        flex-direction: column; /* Input nama & email jadi tumpuk */
+        gap: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 26px;
+    }
+
+    .contact-section {
+        padding: 120px 5% 50px;
+    }
+
+    .btn-send {
+        width: 100%; /* Tombol jadi lebar penuh di HP */
+    }
+}
+
+/* --- TESTIMONIALS PAGE STYLING --- */
+.testimonials-page {
+    padding: 150px 5% 100px; /* Jarak agar tidak tertutup navbar hitam */
+    background-color: #f1f3f6;
+    min-height: 100vh;
+}
+
+.title-center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title-center h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111;
+}
+
+.title-center hr {
+    width: 80px;
+    border: 2px solid #ff5722;
+    margin: 15px auto;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.stars {
+    color: #ffc107;
+    margin-bottom: 20px;
+}
+
+.testimonial-item p {
+    color: #555;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.client-info img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff5722;
+}
+
+.client-info h4 {
+    font-size: 16px;
+    color: #111;
+    font-weight: 700;
+}
+
+.client-info span {
+    font-size: 13px;
+    color: #888;
 }

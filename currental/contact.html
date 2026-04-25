@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LouizRent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar" style="background: #111;"> 
+        <div class="nav-container">
+            <a href="index.html" class="logo">LOUIZ<span>RENT</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#cars">Cars</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-register">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Have questions about our louiz fleet? Our team is here to help you 24/7.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Jl. Malioboro No. 123, Yogyakarta, Indonesia</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>+62 812 2788 4330</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>louizrent@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="https://formspree.io/f/your-id" method="POST">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn-send">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

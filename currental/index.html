@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental</title>
+    <title>LuxRent - Premium Car Rental</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="search">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">LOUIZ<span>RENT</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="#search" class="active">Search</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="testimoni.html">Testimonials</a></li>
+            </ul>
+
+            <div class="nav-auth">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-register">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="search">
         <div class="title">
             <h1>Car Rental</h1>
             <p>Find the perfect car for your next adventure</p>
             <hr>
         </div>
+
         <div class="form-container">
             <div class="form-group">
                 <label for="pickup">Rental Location:</label>
-                <select id="pickup" name="pickup">
+                <select id="pickup">
                     <option value="">Select Location</option>
                     <option value="location1">Yogyakarta</option>
                     <option value="location2">Bali</option>
@@ -26,39 +44,56 @@
             </div>
             <div class="form-group">
                 <label for="pickup-date">Rental Start Date:</label>
-                <input type="date" id="pickup-date" name="pickup-date">
+                <input type="date" id="pickup-date">
             </div>
             <div class="form-group">
                 <label for="return-date">Rental End Date:</label>
-                <input type="date" id="return-date" name="return-date">
+                <input type="date" id="return-date">
             </div>
-            <button type="submit">Search</button>
+            <button type="submit" class="btn-search">Search</button>
         </div>
-    </div>
+    </header>
 
-    <div class="car-list">
-        <h2>Car List</h2>
+    <section class="car-list" id="cars">
+    <h2>Our Premium Fleet</h2>
+    <div class="car-grid">
         <div class="car-item">
-            <img src="../cars ' 2006.jpg" alt="Car 1">
-            <h3>Tow Matter</h3>
-            <p>Pilihan yang tepat disaat mobil mogok</p>
+            <div class="car-image">
+                <img src="path/to/tow-matter.jpg" alt="Tow Matter">
+                </div>
+            <div class="car-info">
+                <h3>Tow Matter</h3>
+                <span class="price-tag">IDR 500.000 <span>/ day</span>
+                <p class="desc">Pilihan yang tepat disaat mobil mogok di jalan.</p>
+                <a href="https://wa.me/6281227884330?text=Halo, saya ingin sewa Tow Matter" target="_blank" class="btn-rent">Rent Now</a>
+            </div>
         </div>
+
         <div class="car-item">
-            <img src="../download.jpg" alt="Car 2">
-            <h3>Fabulous Mcqueen</h3>
-            <p>Mau balap? pilih mcqueen</p>
+            <div class="car-image">
+                <img src="path/to/mcqueen.jpg" alt="Fabulous Mcqueen">
+            </div>
+            <div class="car-info">
+                <h3>Fabulous Mcqueen</h3>
+                <span class="price-tag">IDR 1.200.000 <span>/ day</span>
+                <p class="desc">Kecepatan adalah segalanya. Cocok untuk balapan.</p>
+                <a href="https://wa.me/6281227884330?text=Halo, saya ingin sewa Fabulous Mcqueen" target="_blank" class="btn-rent">Rent Now</a>
+            </div>
         </div>
+
         <div class="car-item">
-            <img src="../Jackson Storm as El Diablo.jpg" alt="Car 2">
-            <h3>Jackson Storm</h3>
-            <p>Kalau mcqueen sold, pilih lah Storm</p>
-        </div>
-        <div class="car-item">
-            <img src="../Personagens de Carros_ conheça nomes e características (1).jpg" alt="Car 2">
-            <h3>Car 2</h3>
-            <p>beautiful car</p>
+            <div class="car-image">
+                <img src="path/to/storm.jpg" alt="Jackson Storm">
+                </div>
+            <div class="car-info">
+                <h3>Jackson Storm</h3>
+                <span class="price-tag">IDR 1.500.000 <span>/ day</span>
+                <p class="desc">Teknologi terbaru untuk performa maksimal.</p>
+                <a href="https://wa.me/6281227884330?text=Halo, saya ingin sewa Jackson Storm" target="_blank" class="btn-rent">Rent Now</a>
+            </div>
         </div>
     </div>
+</section>
+
 </body>
-
 </html>

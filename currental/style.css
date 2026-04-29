@@ -45,7 +45,7 @@ body {
 }
 
 .logo span {
-    color: #ff5722;
+    color: #23067a;
 }
 
 .nav-links {
@@ -69,7 +69,7 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    background: #ff5722;
+    background: #23067a;
     left: 0;
     bottom: -5px;
     transition: 0.3s;
@@ -93,7 +93,7 @@ body {
 }
 
 .btn-register {
-    background-color: #ff5722;
+    background-color: #23067a;
     color: #fff;
     padding: 10px 25px;
     border-radius: 8px;
@@ -102,7 +102,7 @@ body {
 }
 
 .btn-register:hover {
-    background-color: #e64a19;
+    background-color: #0342ff;
     box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
 }
 
@@ -138,7 +138,7 @@ body {
 
 .title hr {
     width: 100px;
-    border: 2px solid #ff5722;
+    border: 2px solid #ffffff;
     margin: 20px auto;
 }
 
@@ -176,7 +176,7 @@ body {
 }
 
 .btn-search {
-    background-color: #ff5722;
+    background-color: #23067a;
     color: rgb(255, 254, 254);
     padding: 12px 30px;
     border: none;
@@ -187,7 +187,7 @@ body {
 }
 
 .btn-search:hover {
-    background-color: #e64a19;
+    background-color: #4000ff;
 }
 
 /* --- CAR LIST SECTION --- */
@@ -203,7 +203,7 @@ body {
 .car-list h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: #e64a19;
+    color: #23067a;
     font-weight: 800;
 }
 
@@ -256,7 +256,7 @@ body {
 
 .price-tag {
     display: block;
-    color: #ff5722;
+    color: #23067a;
     font-weight: 700;
     margin-bottom: 15px;
     font-size: 1.25rem;
@@ -271,7 +271,7 @@ body {
 
 .btn-rent {
     display: inline-block;
-    background-color: #ff5722;
+    background-color: #23067a;
     color: #ffffff;
     padding: 14px 35px;
     border-radius: 50px;
@@ -283,12 +283,14 @@ body {
 }
 .btn-rent:hover {
     background-color: #ffffff;
-    color: #ff5722;
-    border: 2px solid #ff5722;
+    color: #000000;
+    border: 2px solid #0d0503;
     box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3);
 }
 
-
+html{
+    scroll-behavior: smooth;
+}
 /*BAGIAN KHUSUS HALAMAN CONTACT */
 .contact-section {
     padding: 150px 5% 100px; /* Jarak atas agar tidak tertutup navbar */
@@ -333,7 +335,7 @@ body {
 }
 
 .info-item i {
-    background: #ff5722;
+    background: #23067a;
     color: #fff;
     width: 50px;
     height: 50px;
@@ -347,7 +349,7 @@ body {
 
 .info-item h3 {
     font-size: 18px;
-    color: #111;
+    color: #23067a;
     margin-bottom: 2px;
 }
 
@@ -392,7 +394,7 @@ body {
 
 /* Mengatur Tombol Kirim */
 .btn-send {
-    background-color: #111;
+    background-color: #23067a;
     color: #fff;
     padding: 15px 35px;
     border: none;
@@ -405,7 +407,8 @@ body {
 }
 
 .btn-send:hover {
-    background-color: #ff5722;
+    background-color: #ffffff;
+    color: #000000;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
 }
@@ -450,12 +453,12 @@ body {
 .title-center h2 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #111;
+    color: #000000;
 }
 
 .title-center hr {
     width: 80px;
-    border: 2px solid #ff5722;
+    border: 2px solid #23067a;
     margin: 15px auto;
 }
 
@@ -504,7 +507,7 @@ body {
     height: 55px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ff5722;
+    border: 2px solid #f00191;
 }
 
 .client-info h4 {

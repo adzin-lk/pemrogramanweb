@@ -1,0 +1,43 @@
+body {
+    Background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 300px;
+    background-color: #0b2270;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+h2 {
+    font-family: 'Times new roman', sans-serif;
+    color: #ffffff;
+}
+
+p {
+    color: #d7d2d2;
+}
+
+.fab { 
+    color: #ffffff; /* Contoh warna pink khas Instagram */
+    font-size: 24px; /* Opsional: untuk memperbesar ukuran ikon */
+    margin: 10px;    /* Agar ada jarak antar ikon */
+}
+
+.fab:hover {
+    color: #ed8edd; /* Warna pink cerah saat hover */
+    transition: color 0.3s ease; /* Animasi transisi warna */
+}
+

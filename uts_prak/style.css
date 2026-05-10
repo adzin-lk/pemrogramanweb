@@ -298,3 +298,37 @@ nav {
     width: 50%;
     background: url('jahit.jpg') center/cover;
 }
+
+/* --- Contact Form --- */
+.contact-section-padding {
+    background-image: url('foto\ about.jpg');
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 200px;
+}
+.contact-section-padding h1 {
+    color: var(--white);
+}
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+    color: var(--white);
+}

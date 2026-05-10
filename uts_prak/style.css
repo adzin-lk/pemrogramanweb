@@ -155,3 +155,62 @@ nav {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 80px;
+}
+
+.hero-content {
+    width: 40%;
+}
+
+.hero-subtitle {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-style: fraunces, serif;
+}
+
+.hero p {
+    font-size: 14px;
+    opacity: 0.7;
+    max-width: 350px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--dark);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: var(--dark);
+    color: var(--white);
+}
+
+.hero-image {
+    width: 60%;
+    height: 80%;
+    background: url('store.jpg') no-repeat center/cover;
+    border-radius: 15px;
+}
+.hero-image img {
+    border-radius: 10px;
+}

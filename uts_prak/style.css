@@ -277,3 +277,24 @@ nav {
     font-style: italic;
     opacity: 0.6;
 }
+
+/* --- About Section --- */
+.about-split {
+    display: flex;
+    height: 600px;
+}
+
+.about-text {
+    width: 50%;
+    background: var(--dark);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+}
+
+.about-img {
+    width: 50%;
+    background: url('jahit.jpg') center/cover;
+}
